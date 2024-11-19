@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-
+import { MapaPage } from '../app/pages/mapa/mapa.page';
 const routes: Routes = [
   {
     path: 'home',
@@ -22,6 +22,15 @@ const routes: Routes = [
     path: '',
     redirectTo: 'login',
     pathMatch: 'full'
+  },
+  {
+    path: 'mapa',
+    loadChildren: () => import('./pages/mapa/mapa.module').then( m => m.MapaPageModule)
+  },
+  {
+    path: 'paypal-payment',
+    loadChildren: () => import('./pages/paypal-payment/paypal-payment.module').then( m => m.PayPalPaymentPageModule)
+
   },
 ];
 

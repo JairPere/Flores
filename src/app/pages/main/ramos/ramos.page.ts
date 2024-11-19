@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavController } from '@ionic/angular'; // Importar NavController para la navegación
 
 interface Ramo {
   nombre: string;
@@ -108,16 +109,19 @@ export class RamosPage {
 
   carrito: Ramo[] = [];
 
-  constructor() { }
+  constructor(private navCtrl: NavController) {} // Inyectar NavController
 
   agregarAlCarrito(ramo: Ramo) {
     this.carrito.push(ramo);
     console.log(this.carrito);
     alert(`${ramo.nombre} ha sido agregado al carrito.`);
   }
+  goHome() {
+    this.navCtrl.navigateBack('/home'); // Aquí debes poner la ruta de tu página de inicio
+  }
 
   verCarrito() {
     console.log('Carrito actual:', this.carrito);
-    // Puedes mostrar el carrito en una nueva página o modal
+    this.navCtrl.navigateBack('/paypal-payment'); 
   }
 }

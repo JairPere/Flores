@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http'; // Importa HttpClientMo
 import { environment } from '../environments/environment';
 import { RouteReuseStrategy } from '@angular/router';
 
+
 // Importaciones de Firebase Authentication
 import firebase from 'firebase/compat/app'; 
 import 'firebase/compat/auth';
@@ -29,7 +30,7 @@ import { getMessaging, provideMessaging } from '@angular/fire/messaging';
     HttpClientModule,
   ],
   providers: [
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy,  },
     provideFirebaseApp(() => initializeApp({
       projectId: "flowersapp-b8028",
       appId: "1:803011651877:web:a910c0e6b8f8ab8d9492cc",

@@ -1,5 +1,7 @@
 {
   "name": "bugambiliamx",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
