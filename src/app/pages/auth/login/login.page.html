@@ -1,39 +1,31 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Inicio de Sesión</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content class="login-content">
+  <div class="login-container card-background">
+    <h2>Bugambiliamx</h2>
+    <p>Bienvenido a nuestra página !!</p>
+    
+    <!-- Imagen redonda -->
+    <img src="assets/Imagenes/logo.jpg" class="rounded-image" />
+    
+    <form (ngSubmit)="onLogin()" class="login-form">
+      <ion-item class="input-item">
+        <ion-label position="floating">Usuario</ion-label>
+        <ion-input [(ngModel)]="usuario" name="usuario" required></ion-input>
+      </ion-item>
+      <ion-item class="input-item">
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input [(ngModel)]="contrasena" type="password" name="contrasena" required></ion-input>
+      </ion-item>
 
-<ion-content [fullscreen]="true" class="ion-padding">
-  <!-- Tarjeta de inicio de sesión -->
-  <ion-card class="login-card">
-    <div class="profile-image-container">
-      <img src="assets/Imagenes/logo.jpg" alt="Profile" class="profile-image" />
-    </div>
+      <div class="button-group">
+        <ion-button type="submit" color="primary" shape="round" class="login-button">
+          Iniciar sesión
+        </ion-button>
+        <ion-button color="secondary" shape="round" class="register-button" (click)="goToRegister()">
+          Crear cuenta nueva
+        </ion-button>
+      </div>
+    </form>
 
-    <ion-card-header>
-      <ion-card-title class="card-title">Bienvenido</ion-card-title>
-      <ion-card-subtitle class="card-subtitle">Inicia sesión para continuar</ion-card-subtitle>
-    </ion-card-header>
-
-    <ion-card-content>
-      <!-- Formulario de inicio de sesión -->
-      <form (ngSubmit)="onLogin()" #loginForm="ngForm">
-        <ion-item>
-          <ion-label position="floating">Correo Electrónico</ion-label>
-          <ion-input type="email" required [(ngModel)]="email" name="email"></ion-input>
-        </ion-item>
-
-        <ion-item>
-          <ion-label position="floating">Contraseña</ion-label>
-          <ion-input type="password" required [(ngModel)]="password" name="password"></ion-input>
-        </ion-item>
-
-        <ion-button expand="full" type="submit" (click)="checkFields(loginForm)">Iniciar Sesión</ion-button>
-        <ion-button expand="full" (click)="createPassword()">Crear Contraseña</ion-button>
-        <ion-button expand="full" (click)="resetPassword()">Restablecer Contraseña</ion-button>
-        <ion-button expand="full" color="danger" (click)="deleteAccount()">Eliminar Cuenta</ion-button>
-      </form>
-    </ion-card-content>
-  </ion-card>
+    <p class="login-footer">¿Olvidaste tu contraseña? <a href="#">Recupérala aquí</a></p>
+  </div>
 </ion-content>

@@ -1,45 +1,59 @@
-.login-card {
-    margin: 16px; /* Espaciado alrededor de la tarjeta */
-    padding: 24px; /* Aumentar el espaciado interno para más aire */
-    border-radius: 15px; /* Bordes redondeados más pronunciados */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más suave y grande */
-    background: linear-gradient(135deg, #ffffff, #e91e63); /* Fondo degradado de blanco a bugambilia */
+.login-content {
+  display: flex;
+  justify-content: center; /* Centrado horizontal */
+  align-items: center; /* Centrado vertical */
+  height: 100vh; /* Asegura que ocupe toda la altura de la pantalla */
 }
 
-.profile-image-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 16px;
+.login-container {
+  background: linear-gradient(135deg, #ffb6c1, #ff8da1); /* Degradado rosita */
+  padding: 20px;
+  border-radius: 15px;
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.profile-image {
-    width: 120px; /* Tamaño de imagen más grande */
-    height: 120px; /* Tamaño de imagen más grande */
-    border-radius: 50%; /* Imagen redonda */
-    object-fit: cover; /* Ajusta la imagen para que cubra el contenedor */
-    border: 4px solid #e91e63; /* Borde alrededor de la imagen en bugambilia */
+h2 {
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 10px;
 }
 
-.card-title {
-    text-align: center;
-    font-weight: bold;
-    font-size: 1.5em; /* Aumenta el tamaño de la fuente */
-    color: #e91e63; /* Color del texto en bugambilia */
+p {
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 20px;
 }
 
-.card-subtitle {
-    text-align: center;
-    color: #666;
-    margin-bottom: 16px; /* Añadir margen inferior */
+.rounded-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 20px;
 }
 
-ion-button {
-    margin: 8px 0; /* Espaciado entre los botones */
-    --background: #e91e63; /* Color de fondo bugambilia para los botones */
-    --color: white; /* Color del texto del botón */
-    --border-radius: 5px; /* Bordes redondeados de los botones */
+.input-item {
+  margin-bottom: 15px;
 }
 
-ion-button[color="danger"] {
-    --background: #ff3d00; /* Color de fondo para eliminar cuenta */
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.login-footer {
+  margin-top: 20px;
+  color: #fff;
+}
+
+.login-footer a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.register-button {
+  width: 100%;
 }

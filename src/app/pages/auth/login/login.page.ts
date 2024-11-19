@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { ToastController } from '@ionic/angular';
-import { NgForm } from '@angular/forms';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -8,41 +7,29 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage {
-  email: string = '';   // Inicialización de email
-  password: string = ''; // Inicialización de password
+  usuario: string = '';
+  contrasena: string = '';
 
-  constructor(private toastController: ToastController) {}
+  constructor(private alertController: AlertController) {}
 
-  async checkFields(form: NgForm) { // Especifica el tipo NgForm
-    if (!form.valid) {
-      const toast = await this.toastController.create({
-        message: 'Por favor, completa todos los campos.',
-        duration: 2000,
-        color: 'danger',
+  async onLogin() {
+    // Validar usuario y contraseña
+    if (!this.usuario || !this.contrasena) {
+      const alert = await this.alertController.create({
+        header: 'Error',
+        message: 'Por favor, ingrese un correo y una contraseña válidos.',
+        buttons: ['OK']
       });
-      await toast.present();
+      await alert.present();
     } else {
-      this.onLogin();
+      // Aquí puedes agregar la lógica para iniciar sesión (verificar usuario y contraseña)
+      // Si el login es exitoso, redirigir a la página correspondiente
+      console.log('Login exitoso con usuario:', this.usuario);
     }
   }
 
-  onLogin() {
-    // Lógica de inicio de sesión
-    console.log('Inicio de sesión exitoso');
-  }
-
-  createPassword() {
-    // Lógica para crear una nueva contraseña
-    console.log('Creando contraseña');
-  }
-
-  resetPassword() {
-    // Lógica para restablecer la contraseña
-    console.log('Restableciendo contraseña');
-  }
-
-  deleteAccount() {
-    // Lógica para eliminar la cuenta
-    console.log('Eliminando cuenta');
+  goToRegister() {
+    // Lógica para navegar a la página de registro
+    console.log('Ir a la página de registro');
   }
 }

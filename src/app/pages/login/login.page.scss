@@ -1,0 +1,20 @@
+ion-content {
+  background-color: #6f4c3e !important; // Color café
+  color: white; // Color del texto
+
+  ion-item {
+    --background: white; // Fondo blanco para los elementos del formulario
+    --color: black; // Color del texto en los elementos del formulario
+  }
+
+  ion-button {
+    background-color: #3880c8; // Color de los botones
+    color: white; // Color del texto de los botones
+  }
+
+  ion-button:last-of-type {
+    background-color: transparent; // Color del botón "Crear Cuenta"
+    color: #3880c8; // Color del texto
+    border: 1px solid #3880c8; // Bordes del botón
+  }
+}

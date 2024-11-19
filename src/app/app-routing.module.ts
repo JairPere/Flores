@@ -8,24 +8,21 @@ const routes: Routes = [
   },
   {
     path: 'ramos',
-  loadChildren: () => import('./pages/main/ramos/ramos.module').then( m => m.RamosPageModule)
-},
-{
-  path: 'login',
-  loadChildren: () => import('./pages/auth/login/login.module').then( m => m.LoginPageModule)
-},
-{
-  path: 'mapa',
-  loadChildren: () => import('./pages/mapa/mapa.module').then(m => m.MapaPageModule)
-},
-  
+    loadChildren: () => import('./pages/main/ramos/ramos.module').then( m => m.RamosPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'register',
+    loadChildren: () => import('./pages/register/register.module').then(m => m.RegisterPageModule)
+  },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
-
-  
 ];
 
 @NgModule({

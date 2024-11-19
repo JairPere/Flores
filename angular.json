@@ -19,6 +19,8 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
+            "serviceWorker": true,
+            "ngswConfigPath": "ngsw-config.json",
             "assets": [
               {
                 "glob": "**/*",
@@ -26,9 +28,14 @@
                 "output": "assets"
               },
               {
-                "glob": "**/*.svg",
+                "glob": "/*.svg",
                 "input": "node_modules/ionicons/dist/ionicons/svg",
                 "output": "./svg"
+              },
+              {
+                "glob": "firebase-messaging-sw.js",
+                "input": "./",
+                "output": "./"
               }
             ],
             "styles": ["src/global.scss", "src/theme/variables.scss"],
@@ -106,9 +113,14 @@
                 "output": "assets"
               },
               {
-                "glob": "**/*.svg",
+                "glob": "/*.svg",
                 "input": "node_modules/ionicons/dist/ionicons/svg",
                 "output": "./svg"
+              },
+              {
+                "glob": "firebase-messaging-sw.js",
+                "input": "./",
+                "output": "./"
               }
             ],
             "styles": ["src/global.scss", "src/theme/variables.scss"],
@@ -125,8 +137,8 @@
           "builder": "@angular-eslint/builder:lint",
           "options": {
             "lintFilePatterns": [
-              "src/**/*.ts",
-              "src/**/*.html"
+              "src//*.ts",
+              "src//*.html"
             ]
           }
         }
@@ -137,7 +149,7 @@
     "schematicCollections": [
       "@ionic/angular-toolkit"
     ],
-    "analytics": "ce00c43a-a90a-4705-b41a-0d8fed88fc56"
+    "analytics": "fa87edbf-5e39-4a91-a742-8d22ca97c28c"
   },
   "schematics": {
     "@ionic/angular-toolkit:component": {
